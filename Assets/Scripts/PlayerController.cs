@@ -9,17 +9,26 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     internal static CharacterInput characterInput;
 
+    [Header("Ground Check")]
     [SerializeField] private Transform groundCheckPos;
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float groundCheckRadius;
     bool _isGrounded;
 
-    [SerializeField] private float moveSpeed = 3.0f;
-    [SerializeField] private float runSpeed = 5.0f;
-    [SerializeField] private float jumpForce = 3.0f;
+    [Header("Movement")]
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float runSpeed;
 
     private Vector3 moveAmount;
     private Vector3 smoothMoveVelocity;
+
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce;
+
+    [Header("Crouch")]
+    [SerializeField] private float crouchSpeed = 1f;
+    [SerializeField] private float crouchYScale = 0.75f;
+    [SerializeField] private float normalYScale = 1f;
 
     private void Awake()
     {
@@ -27,11 +36,9 @@ public class PlayerController : MonoBehaviour
         characterInput.Robot.Enable();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
     }
     void Update()
     {
@@ -59,12 +66,16 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
         }
     }
-
+    
     private void Move()
     {
         if (characterInput.Robot.Run.IsInProgress())
         {
             Movement(runSpeed);
+        }
+        else if (characterInput.Robot.Crouch.IsInProgress())
+        {
+            Movement(crouchSpeed);
         }
         else
         {
@@ -77,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (characterInput.Robot.Jump.IsInProgress() && _isGrounded)
         {
             Debug.Log("Jump");
-            rb.AddForce(transform.up * jumpForce);
+            rb.AddForce(transform.up * jumpForce * Mathf.Abs(Physics.gravity.y));
         }
     }
 
@@ -88,12 +99,17 @@ public class PlayerController : MonoBehaviour
     }
     private bool GroundCheck => Physics.CheckSphere(groundCheckPos.position, groundCheckRadius, groundLayerMask);
 
-    private void Crouch() // Test function to check input
+    private void Crouch()
     {
         if (characterInput.Robot.Crouch.IsInProgress() && _isGrounded)
         {
             // Crouch Function
             Debug.Log("Crouch");
+            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(transform.localScale.x, normalYScale, transform.localScale.z);
         }
     }
 }
