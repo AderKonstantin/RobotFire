@@ -1,0 +1,88 @@
+* {
+	-unity-font: url("project:/Assets/Fonts/ubuntu-font-family-0.83/UbuntuMono-R.ttf");
+	-unity-font-definition: initial;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.terminal-background {
+	background-color: #242424;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+Label {
+	-unity-text-align: middle-center;
+	font-size: 32px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+#TerminalLabel {
+}
+#CommandLabel {
+}
+#InfoLabel {
+}
+.terminal-inner {
+	height: 100%;
+	width: 1736px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.terminal-header {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.terminal-main {
+	width: 100%;
+	height: 867px;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.terminal-command {
+	width: 400px;
+	height: 700px;
+	background-color: #2C2C2C;
+	align-items: center;
+}
+.terminal-console {
+	width: 800px;
+	height: 700px;
+	background-color: #2C2C2C;	
+}
+.terminal-info {
+	width: 400px;
+	height: 700px;
+	background-color: #2C2C2C;
+}
+
+.terminal-footer {
+	width: 100%;
+	height: 128px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+Button {
+	width: 80%;
+	min-height: 64px;
+	height: auto;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	overflow: visible;
+}

@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/Game/Frontend/Terminal.uss?fileID=7433441132597879392&amp;guid=7a73653813d13b54aa4fed9ee3dbadd5&amp;type=3#Terminal" />
+    <ui:VisualElement name="TerminalBackground" class="terminal-background">
+        <ui:VisualElement name="TerminalInner" class="terminal-inner">
+            <ui:VisualElement name="TerminalHeader" class="terminal-header">
+                <ui:Label name="TerminalLabel" text="RCS Terminal"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="TerminalMain" class="terminal-main">
+                <ui:VisualElement name="TerminalCommand" class="terminal-command">
+                    <ui:Label name="CommandLabel" text="Command Management"/>
+                    <ui:Button name="ChangeRobotClass" text="Change Robot Class"/>
+                    <ui:Button name="ConnectToFirst" text="Connect to first available Robot"/>
+                    <ui:Button name="ConnectToBase" text="Connect to available Robot on base"/>
+                    <ui:Button name="ConnectToLatest" text="Connect to latest activated Robot"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="TerminalConsole" class="terminal-console">
+                    
+                </ui:VisualElement>
+                <ui:VisualElement name="TerminalInfo" class="terminal-info">
+                    <ui:Label name="InfoLabel" text="RCS Status"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <ui:VisualElement name="TerminalFooter" class="terminal-footer">
+                <ui:Label name="CompanyLabel" text="Kot'kaRobots Inc. "/>
+                <ui:Label name="VersionLabel" text="alpha 0.00000001a"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
