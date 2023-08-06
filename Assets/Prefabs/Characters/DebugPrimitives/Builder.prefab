@@ -217,8 +217,8 @@ GameObject:
   m_Component:
   - component: {fileID: 577147204342056533}
   - component: {fileID: 243998537407648648}
-  - component: {fileID: 4416206844932367478}
   - component: {fileID: 6176743236948781143}
+  - component: {fileID: 4416206844932367478}
   m_Layer: 0
   m_Name: Builder
   m_TagString: Robot
@@ -272,18 +272,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &4416206844932367478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5874497554763367439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e79c0b2eb8082419a7a25e72dfcffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6176743236948781143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65c57cbba24dc04e8fd475bc036c41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUsingByPlayer: 0
   groundCheckPos: {fileID: 0}
   groundLayerMask:
     serializedVersion: 2
@@ -307,6 +296,18 @@ MonoBehaviour:
   crouchSpeed: 1
   crouchYScale: 0.75
   normalYScale: 1
+--- !u!114 &4416206844932367478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874497554763367439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e79c0b2eb8082419a7a25e72dfcffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7048142197288007714
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RobotClass : MonoBehaviour
@@ -7,6 +5,8 @@ public class RobotClass : MonoBehaviour
     // Here is the whole logic of Robot stats: health points, components, inventory, etc.
 
     protected Rigidbody rb;
+
+    internal RobotStateManager robotStateManager;
 
     [Header("Ground Check")]
     [SerializeField] protected Transform groundCheckPos;
@@ -38,13 +38,17 @@ public class RobotClass : MonoBehaviour
     
     void Start()
     {
+        /* This two lines is used by Childrens Robot Classes / there is like example
         rb = GetComponent<Rigidbody>();
+        robotStateManager = GetComponent<RobotStateManager>();
+        */
     }
     void Update() { }
 
     private void FixedUpdate()
     {
-        
+
+
         /*_isGrounded = GroundCheck;
         Move();
         Jump();
